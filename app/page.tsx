@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Croissant, Wheat, Sandwich, Coffee } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   const products = [
@@ -123,8 +124,15 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="w-full md:w-1/2"
             >
-              <div className="aspect-square bg-dark-roast/10 rounded-2xl flex items-center justify-center">
-                <span className="text-dark-roast/30 text-lg">Bakery Image</span>
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <Image
+                  src="/bakery-image.jpeg"
+                  alt="Fold Bakery - Artisan baking process"
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
             </motion.div>
 
